@@ -1,68 +1,43 @@
-import {
-    ActionButton,
-    Button,
-    LogicButton,
-    ActionGroup,
-    ToggleButton,
-    Breadcrumbs,
-    ButtonGroup,
-    Flex,
-    Form,
-    Heading,
-    Text,
-    IllustratedMessage,
-    Image,
-    Item,
-    Section,
-    Link,
-    ListBox,
-    Menu,
-    MenuTrigger,
-    Picker,
-    TextField,
-    RadioGroup,
-    Radio,
-    SearchField,
-    StatusLight,
-    Switch,
-    View,
-    Content,
-    Well,
-    Checkbox,
-    Dialog,
-    DialogTrigger,
-    Divider,
-    ProgressBar,
-    ProgressCircle,
-    Meter,
-    Provider,
-    defaultTheme,
-} from '@adobe/react-spectrum';
-import { SSRProvider } from '@react-aria/ssr';
-import NotFound from '@spectrum-icons/illustrations/NotFound';
-import Head from 'next/head';
+import { NextComponentType } from 'next';
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import styled from 'styled-components';
 
-const sections = [
-    { name: 'Animals', children: [{ name: 'Aardvark' }, { name: 'Kangaroo' }, { name: 'Snake' }] },
-    { name: 'People', children: [{ name: 'Danni' }, { name: 'Devon' }, { name: 'Ross' }] },
-];
+const Title = styled.h1`
+    font-size: 50px;
+    color: ${({ theme }) => theme.colors.primary};
+`;
 
-export default function Home() {
+const useCounter = () => {
+    const count = useSelector((state: any) => state.count);
+    const dispatch = useDispatch();
+    const increment = () =>
+        dispatch({
+            type: 'INCREMENT',
+        });
+    const decrement = () =>
+        dispatch({
+            type: 'DECREMENT',
+        });
+    const reset = () =>
+        dispatch({
+            type: 'RESET',
+        });
+    return { count, increment, decrement, reset };
+};
+
+const Index: NextComponentType = () => {
+    const { count, increment, decrement, reset } = useCounter();
     return (
-        <>
-            <Head>
-                <link rel="stylesheet" href="https://use.typekit.net/uma8ayv.css" />
-            </Head>
-            <style jsx global>{`
-                html,
-                body,
-                #__next {
-                    width: 100%;
-                    height: 100%;
-                    margin: 0;
-                }
-            `}</style>
-        </>
+        <div>
+            <Title>
+                Count: <span>{count}</span>
+            </Title>
+            <button onClick={increment}>+1</button>
+            <button onClick={decrement}>-1</button>
+            <button onClick={reset}>Reset</button>
+        </div>
     );
-}
+};
+
+export default Index;
