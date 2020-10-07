@@ -6,9 +6,10 @@
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@adobe/react-spectrum-ui/-/react-spectrum-ui-1.0.1.tgz#5fe405d55534e06d3bf060f86a79935cda5f6615"
 
-"@adobe/react-spectrum@^3.4.0":
+"@adobe/react-spectrum@3.4.0":
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/@adobe/react-spectrum/-/react-spectrum-3.4.0.tgz#0b2cc7863ff53824f81a55525cf1ad0aeba20128"
+  integrity sha512-pU4lCegOAvKGvHzuqhEHntB3H+1njjO2qte0TZKR0siyobNM16et6nHIzxq+RdKKEKP+iWxNz4FbqCoC4qBwWg==
   dependencies:
     "@react-aria/i18n" "^3.1.2"
     "@react-aria/ssr" "^3.0.1"
@@ -2410,9 +2411,10 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@spectrum-icons/illustrations@^3.2.0":
+"@spectrum-icons/illustrations@3.2.0":
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/@spectrum-icons/illustrations/-/illustrations-3.2.0.tgz#d8587fd36e5c33cb0ba10e57cb8ec5f042a1d247"
+  integrity sha512-9dHTe0qfkjhf+s8FvPElnUi3kOimQxjrMssABb7dCRaH+/jHyQ8q+HwJGi5wZL/jMiPqDlM+6H1jaEwH5BAGNQ==
   dependencies:
     "@adobe/react-spectrum-ui" "^1.0.0"
 
@@ -2785,9 +2787,10 @@
   version "4.2.2"
   resolved "https://registry.yarnpkg.com/@xtuc/long/-/long-4.2.2.tgz#d291c6a4e97989b5c61d9acf396ae4fe133a718d"
 
-"@zeit/next-css@^1.0.1":
+"@zeit/next-css@1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@zeit/next-css/-/next-css-1.0.1.tgz#4f784e841e7ca1b21b3468a902e2c1fa95a3e75c"
+  integrity sha512-yfHPRy/ne/5SddVClsoy+fpU7e0Cs1gkWA67/wm2uIu+9rznF45yQLxHEt5dPGF3h6IiIh7ZtIgA8VV8YKq87A==
   dependencies:
     css-loader "1.0.0"
     extracted-loader "1.0.4"
@@ -6390,17 +6393,19 @@ neo-async@^2.5.0, neo-async@^2.6.1:
   version "2.6.2"
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
 
-next-compose-plugins@^2.2.0:
+next-compose-plugins@2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/next-compose-plugins/-/next-compose-plugins-2.2.0.tgz#95cd8eb40ab0652070d76572fb648354191628b0"
+  integrity sha512-ChUlpT9tWfJ7YxqGw/WQ2T1gf8EeX93n1XqeQw0lkvGa7seszahvF4eOZUJoq7Hetsbzg4UHVnPoCXfXTyQR3g==
 
 next-tick@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
 
-next-transpile-modules@^4.1.0:
+next-transpile-modules@4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/next-transpile-modules/-/next-transpile-modules-4.1.0.tgz#b2d4bd29f3d4179014f7615720f360fdeec67ff7"
+  integrity sha512-brb9S2Dq7l01fV0fdZw1pO2cWMu7fFTclIV2nccmX2Jzwtz1c9iScPMqGyWP6/wglOPOColoJlHzOrSG6cnEIQ==
   dependencies:
     micromatch "^4.0.2"
     slash "^3.0.0"
