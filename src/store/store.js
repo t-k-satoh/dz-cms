@@ -1,5 +1,7 @@
+import { configureStore, createAction, createReducer, createSlice } from '@reduxjs/toolkit';
 import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import * as entitiesSlices from './entities';
 
 let store;
 
@@ -9,36 +11,48 @@ const initialState = {
     count: 0,
 };
 
-const reducer = (state = initialState, action) => {
-    switch (action.type) {
-        case 'TICK':
-            return {
-                ...state,
-                lastUpdate: action.lastUpdate,
-                light: !!action.light,
-            };
-        case 'INCREMENT':
-            return {
-                ...state,
-                count: state.count + 1,
-            };
-        case 'DECREMENT':
-            return {
-                ...state,
-                count: state.count - 1,
-            };
-        case 'RESET':
-            return {
-                ...state,
-                count: initialState.count,
-            };
-        default:
-            return state;
-    }
-};
+export const counterSlice = createSlice({
+    name: 'counter',
+    initialState: { count: 0 },
+    reducers: {
+        increment: (state) => ({ ...state, count: state.count + 1 }),
+        decrement: (state) => ({ ...state, count: state.count - 1 }),
+        reset: (state) => ({ ...state, count: initialState.count }),
+    },
+});
+
+const { categoriesSlice } = entitiesSlices;
+
+// const reducer = (state = initialState, action) => {
+//     switch (action.type) {
+//         case 'TICK':
+//             return {
+//                 ...state,
+//                 lastUpdate: action.lastUpdate,
+//                 light: !!action.light,
+//             };
+//         case increment.type:
+//             return {
+//                 ...state,
+//                 count: state.count + 1,
+//             };
+//         case decrement.type:
+//             return {
+//                 ...state,
+//                 count: state.count - 1,
+//             };
+//         case reset.type:
+//             return {
+//                 ...state,
+//                 count: initialState.count,
+//             };
+//         default:
+//             return state;
+//     }
+// };
 
 function initStore(preloadedState = initialState) {
-    return createStore(reducer, preloadedState, composeWithDevTools(applyMiddleware()));
+    return configureStore({ reducer: categoriesSlice.reducer });
 }
 
 export const initializeStore = (preloadedState) => {
