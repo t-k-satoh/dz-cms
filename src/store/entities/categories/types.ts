@@ -3,8 +3,6 @@ import { QueryStatus } from 'react-query';
 import { PromiseReturnType } from '../../../../utils/types';
 
 export type CategoriesState = {
-    categories: {
-        data: PromiseReturnType<typeof categories.list>['categories'];
-        status: QueryStatus;
-    };
+    data: PromiseReturnType<typeof categories.list>;
+    status: QueryStatus;
 };

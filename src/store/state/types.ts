@@ -1,5 +1,3 @@
-import { EntitiesState } from '../entities/state';
+import { rootReducer } from '..';
 
-export type InitialState = {
-    entities: EntitiesState;
-};
+export type InitialState = ReturnType<typeof rootReducer>;

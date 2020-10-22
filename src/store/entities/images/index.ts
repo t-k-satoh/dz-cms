@@ -1,0 +1,1 @@
+export { imagesSlice } from './slice';

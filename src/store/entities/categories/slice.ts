@@ -1,17 +1,17 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { initialState } from '../../state/initial-state';
 import { NAME } from './constants';
+import { categoriesState } from './state';
 import { CategoriesState } from './types';
 
 export const categoriesSlice = createSlice({
     name: NAME,
-    initialState,
+    initialState: categoriesState,
     reducers: {
-        setData: (state, action: PayloadAction<Pick<CategoriesState['categories'], 'data'>>) => {
-            state.entities.categories.data = action.payload.data;
+        setData: (state, action: PayloadAction<Pick<CategoriesState, 'data'>>) => {
+            state.data = action.payload.data;
         },
-        setStatus: (state, action: PayloadAction<Pick<CategoriesState['categories'], 'status'>>) => {
-            state.entities.categories.status = action.payload.status;
+        setStatus: (state, action: PayloadAction<Pick<CategoriesState, 'status'>>) => {
+            state.status = action.payload.status;
         },
     },
 });
