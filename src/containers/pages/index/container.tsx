@@ -25,26 +25,12 @@ const selector = createSelector([(state: InitialState) => state], (state) => {
 
 export const IndexContainer = (): JSX.Element => {
     const dispatch = useDispatch();
-    const categoriesQuery = useQuery('categories', useCases.getCategories, {
-        initialData: { success: false, categories: [] },
-    });
-    const imagesQuery = useQuery('images', useCases.getImages, {
-        initialData: { success: false, images: [] },
-    });
-    const imagesGroupsQuery = useQuery('imagesGroups', useCases.getImagesGroups, {
-        initialData: { success: false, imagesGroups: [] },
-    });
-    const keyVisualsQuery = useQuery('keyVisuals', useCases.getKeyVisuals, {
-        initialData: { success: false, keyVisuals: [] },
-    });
-    const productsQuery = useQuery('products', useCases.getProducts, {
-        initialData: { success: false, products: [] },
-    });
-    const subCategoriesQuery = useQuery('subCategories', useCases.getSubCategories, {
-        initialData: { success: false, subCategories: [] },
-    });
-
-    const testQuery = useQuery('subCategories', useCases.getProducts);
+    const categoriesQuery = useQuery('categories', useCases.getCategories);
+    const imagesQuery = useQuery('images', useCases.getImages);
+    const imagesGroupsQuery = useQuery('imagesGroups', useCases.getImagesGroups);
+    const keyVisualsQuery = useQuery('keyVisuals', useCases.getKeyVisuals);
+    const productsQuery = useQuery('products', useCases.getProducts);
+    const subCategoriesQuery = useQuery('subCategories', useCases.getSubCategories);
 
     React.useEffect(() => {
         dispatch(entitiesSlices.categoriesSlice.actions.setStatus({ status: categoriesQuery.status }));
@@ -99,21 +85,26 @@ export const IndexContainer = (): JSX.Element => {
     }, [subCategoriesQuery.isSuccess, subCategoriesQuery.data]);
 
     const isAllDataSuccess: boolean = React.useMemo(() => {
-        return [
-            categoriesQuery.data.success,
-            imagesQuery.data.success,
-            imagesGroupsQuery.data.success,
-            keyVisualsQuery.data.success,
-            productsQuery.data.success,
-            subCategoriesQuery.data.success,
-        ].every((_success) => _success);
+        const dataList = [
+            categoriesQuery.data,
+            imagesQuery.data,
+            imagesGroupsQuery.data,
+            keyVisualsQuery.data,
+            productsQuery.data,
+            subCategoriesQuery.data,
+        ];
+
+        if (dataList.every((data) => data !== undefined)) {
+            return dataList.map((data) => data.success).every((_success) => _success);
+        }
+        return false;
     }, [
-        categoriesQuery.data.success,
-        imagesQuery.data.success,
-        imagesGroupsQuery.data.success,
-        keyVisualsQuery.data.success,
-        productsQuery.data.success,
-        subCategoriesQuery.data.success,
+        categoriesQuery.data,
+        imagesQuery.data,
+        imagesGroupsQuery.data,
+        keyVisualsQuery.data,
+        productsQuery.data,
+        subCategoriesQuery.data,
     ]);
 
     React.useEffect(() => {

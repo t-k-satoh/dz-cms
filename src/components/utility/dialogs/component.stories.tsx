@@ -1,13 +1,13 @@
 import React, { ComponentProps } from 'react';
-
+import { UtilityName } from '../constants';
 import { Dialogs } from '.';
 
+const Template = (arg: ComponentProps<typeof Dialogs>) => <Dialogs {...arg} />;
+
 export default {
-    title: 'Example/Button',
+    title: `${UtilityName}/${Dialogs.name}`,
     component: Dialogs,
 };
-
-const Template = (arg: ComponentProps<typeof Dialogs>) => <Dialogs {...arg} />;
 
 export const SIGN_IN = Template.bind({});
 SIGN_IN.args = {
