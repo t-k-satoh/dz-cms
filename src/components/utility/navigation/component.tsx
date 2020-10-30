@@ -1,23 +1,20 @@
-import { Text, Icon } from '@adobe/react-spectrum';
+import { Text } from '@adobe/react-spectrum';
 import Link from 'next/link';
 import React from 'react';
-import { Paths } from '../../../constants/paths';
+import { NAVIGATION } from '../../../constants';
 import { State } from '../../../containers/utility/navigation/container';
 import * as Styles from './styles';
 
 export const Navigation: React.FC<State> = ({ currentKey }) => {
-    const navigationList = React.useMemo(() => {
-        return Object.entries(Paths).map((entry) => {
-            const key = entry[0] as State['currentKey'];
-            const { label, path } = entry[1];
-
-            return {
-                label: label.en,
+    const navigationList = React.useMemo(
+        () =>
+            NAVIGATION.map(({ label, key, path }) => ({
+                label,
                 path,
                 isSelected: key === currentKey,
-            };
-        });
-    }, []);
+            })),
+        [currentKey, NAVIGATION],
+    );
 
     return (
         <Styles.Main>

@@ -11,6 +11,7 @@ import { useCases } from '../../../use-cases';
 
 export type State = {
     entities: InitialState['entities'];
+    isSignIn: InitialState['user']['isSignIn']['isSignIn'];
 };
 
 // export type Dispatch = Record<string, unknown>;
@@ -18,6 +19,7 @@ export type State = {
 const selector = createSelector([(state: InitialState) => state], (state) => {
     return {
         entities: state.entities,
+        isSignIn: state.user.isSignIn.isSignIn,
     };
 });
 

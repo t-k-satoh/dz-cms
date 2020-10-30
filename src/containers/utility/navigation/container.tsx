@@ -1,19 +1,19 @@
 import { useRouter } from 'next/router';
 import React from 'react';
 import { Navigation } from '../../../components/utility/navigation';
-import { pathsListValues, Paths, PathList } from '../../../constants/paths';
+import { KEYS, PATHS, NAVIGATION } from '../../../constants';
 
 export type State = {
-    currentKey: keyof typeof Paths;
+    currentKey: typeof KEYS[number];
 };
 
 export const NavigationContainer = (): JSX.Element => {
     const router = useRouter();
-    const path = router.pathname as typeof pathsListValues[number];
-    const currentKey = React.useMemo(
-        (): keyof typeof Paths => Object.entries(PathList).find((entry) => entry[1] === path)[0] as keyof typeof Paths,
-        [path, PathList],
-    );
+    const currentPath = router.pathname as typeof PATHS[number];
+    const currentKey = React.useMemo(() => NAVIGATION.find(({ path }) => path === currentPath).key, [
+        currentPath,
+        NAVIGATION,
+    ]);
     const state: State = {
         currentKey,
     };

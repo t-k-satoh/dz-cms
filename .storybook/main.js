@@ -1,3 +1,4 @@
+const path = require('path');
 
 module.exports = {
   "stories": [
@@ -16,5 +17,13 @@ module.exports = {
       shouldExtractLiteralValuesFromEnum: true,
       propFilter: (prop) => (prop.parent ? !/node_modules/.test(prop.parent.fileName) : true),
     },
+  },
+  webpackFinal: async (config, { configType }) => {
+    config.resolve.modules = [
+      path.resolve(__dirname, ".."),
+      "node_modules",
+    ]
+
+    return config;
   }
 }

@@ -12,7 +12,7 @@ export const ListWrap = styled.ul`
 
 export const List = styled.li`
     width: 100%;
-    height: 32px;
+    height: 60px;
 `;
 
 export const LinkDetail = styled.div`
