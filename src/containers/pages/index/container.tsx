@@ -112,7 +112,9 @@ export const IndexContainer = (): JSX.Element => {
     React.useEffect(() => {
         dispatch(userSlices.isSignInSlice.actions.setIsSignIn({ isSignIn: isAllDataSuccess }));
 
-        !isAllDataSuccess && dispatch(appSlices.dialogsSlice.actions.setType({ type: 'SIGN_IN' }));
+        isAllDataSuccess
+            ? dispatch(appSlices.dialogsSlice.actions.setType({ type: 'NONE' }))
+            : dispatch(appSlices.dialogsSlice.actions.setType({ type: 'SIGN_IN' }));
     }, [isAllDataSuccess]);
 
     const mapStateToProps: State = useSelector(selector);

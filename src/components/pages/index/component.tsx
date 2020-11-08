@@ -20,15 +20,14 @@ export const Index: React.FC<State> = ({ entities, isSignIn }) => {
         return successLength !== allLength;
     }, [data]);
 
-    const productsData = React.useMemo(() => {
-        products.data.products.map;
-    }, [products.data]);
+    console.log(products.data.products);
 
     return (
         <Wrapper isLoading={isLoading} canRender={isSignIn}>
             <Styles.CardWrap>
                 <Styles.Card>
-                    <Styles.CardTitle>{products.key}</Styles.CardTitle>
+                    <Styles.CardTitle>{products.data.products.length} Products</Styles.CardTitle>
+                    <Styles.CardTitle>{categories.data.categories.length} Categories</Styles.CardTitle>
                 </Styles.Card>
             </Styles.CardWrap>
         </Wrapper>

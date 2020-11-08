@@ -13,6 +13,7 @@ export const ListWrap = styled.ul`
 export const List = styled.li`
     width: 100%;
     height: 60px;
+    cursor: pointer;
 `;
 
 export const LinkDetail = styled.div`

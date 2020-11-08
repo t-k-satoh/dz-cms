@@ -10,9 +10,13 @@ export const CardWrap = styled.div``;
 export const Card = styled.section`
     width: 100%;
     padding: 1em;
-    border: 1px solid #ff0000;
+    box-sizing: border-box;
 `;
 
 export const CardTitle = styled.h1`
     font-size: 32px;
+`;
+
+export const CardSubTitle = styled.h2`
+    font-size: 28px;
 `;

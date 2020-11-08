@@ -24,4 +24,5 @@ export const Contents = styled.div`
     width: calc(100% - 240px);
     height: 100%;
     padding: 20px;
+    overflow: scroll;
 `;

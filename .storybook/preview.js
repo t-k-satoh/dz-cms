@@ -2,6 +2,8 @@ import { Provider as UIProvider, defaultTheme } from '@adobe/react-spectrum';
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { Reset } from 'styled-reset';
+import { Provider } from 'react-redux';
+import { store } from '../src/store';
 
 const theme = {
     colors: {
@@ -15,11 +17,12 @@ export const parameters = {
 
 export const decorators = [
     (Story) => (
-        <UIProvider theme={defaultTheme} minHeight="100%">
-            <ThemeProvider theme={theme}>
-                <Reset />
-                <Story />
-            </ThemeProvider>
-        </UIProvider>
+        <Provider store={store}><UIProvider theme={defaultTheme} minHeight="100%">
+        <ThemeProvider theme={theme}>
+            <Reset />
+            <Story />
+        </ThemeProvider>
+    </UIProvider></Provider>
+
     ),
 ];

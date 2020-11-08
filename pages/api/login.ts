@@ -1,6 +1,6 @@
 import auth0 from '../../utils/auth0';
 
-export default async function login(req, res): Promise<void> {
+export default async function login(req, res) {
     try {
         await auth0.handleLogin(req, res);
     } catch (error) {
