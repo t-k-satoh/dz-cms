@@ -48,7 +48,7 @@
     "@types/cookie": "0.4.0",
     "@types/jest": "26.0.19",
     "@types/js-cookie": "2.2.6",
-    "@types/lodash": "4.14.165",
+    "@types/lodash": "4.14.166",
     "@types/node": "14.14.14",
     "@types/pascalcase": "1.0.0",
     "@types/react": "17.0.0",
