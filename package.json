@@ -75,7 +75,7 @@
     "react-is": "17.0.1",
     "redux-devtools-extension": "2.13.8",
     "sort-package-json": "1.48.1",
-    "ts-jest": "26.4.4",
+    "ts-jest": "26.5.1",
     "utility-types": "3.10.0",
     "uuid": "8.3.2"
   }
