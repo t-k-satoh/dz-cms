@@ -43,7 +43,7 @@
     "@storybook/addon-essentials": "6.1.20",
     "@storybook/addon-links": "6.1.20",
     "@storybook/node-logger": "6.1.20",
-    "@storybook/preset-create-react-app": "3.1.6",
+    "@storybook/preset-create-react-app": "3.1.7",
     "@storybook/react": "6.1.20",
     "@types/cookie": "0.4.0",
     "@types/jest": "26.0.20",
