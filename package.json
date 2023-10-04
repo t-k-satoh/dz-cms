@@ -17,7 +17,7 @@
   "dependencies": {
     "@adobe/react-spectrum": "3.9.0",
     "@auth0/nextjs-auth0": "0.16.1",
-    "@reduxjs/toolkit": "1.5.1",
+    "@reduxjs/toolkit": "1.9.7",
     "@spectrum-icons/illustrations": "3.2.1",
     "axios": "0.21.1",
     "cookie": "0.4.1",
