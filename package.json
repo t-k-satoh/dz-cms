@@ -15,7 +15,7 @@
     "storybook": "start-storybook -p 6006"
   },
   "dependencies": {
-    "@adobe/react-spectrum": "3.9.0",
+    "@adobe/react-spectrum": "3.37.1",
     "@auth0/nextjs-auth0": "0.16.1",
     "@reduxjs/toolkit": "1.5.1",
     "@spectrum-icons/illustrations": "3.2.1",
